@@ -1,0 +1,21 @@
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+login page
+<hr>
+<form th:action="@{/loginProc}" method="post" th:object="${loginForm}">
+  <input type="text" th:field="*{username}" placeholder="id"/>
+  <input type="password" th:field="*{password}" placeholder="password"/>
+  <input type="hidden"
+         th:name="${_csrf.parameterName}"
+         th:value="${_csrf.token}" />
+  <input type="submit" value="login"/>
+</form>
+</body>
+</html>
